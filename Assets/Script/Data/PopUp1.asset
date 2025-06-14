@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cd8b4ddeb662e44b7cfcfd31de2a19, type: 3}
+  m_Name: PopUp1
+  m_EditorClassIdentifier: 
+  popupTitle: Jembatan Siak IV
+  pagesOfTextIsi:
+  - Jembatan ini memiliki nama lengkap Jembatan Sultan Abdul Jalil Alamuddin Syah,
+    tetapi sering disebut Jembatan Siak IV. Jembatan ini diresmikan pada tanggal
+    14 Februari 2019 oleh Gubernur Riau saat itu, yaitu  Bapak Wan Thamrin Hasyim
+  - Jembatan ini diberi nama Sultan Abdul Jalil Alamuddin Syah untuk menghormati
+    beliau. Siapa beliau? Beliau adalah pendiri Kota Pekanbaru yang memerintah dari
+    tahun 1766 hingga 1782. Keren, ya? Dengan memberi nama jembatan ini, kita mengenang
+    jasa beliau dalam sejarah kota kita
+  - Tahukah kamu bahwa jembatan ini dibangun dengan  membelah kota Pekanbaru menjadi
+    dua bagian loh, yang dipisah oleh sungai siak. Dulu, sungai ini dikenal sebagai
+    Sungai Jantan. Nah, Jembatan Siak IV dibangun untuk menghubungkan kedua sisi
+    kota tersebut, sehingga orang-orang bisa menyeberang dengan mudah dan cepat!
+  - Jembatan ini memiliki panjang sekitar 800 meter loh. Panjang sekali bukan?. Bagian
+    tiang nya memiliki ketinggian setinggi 75 meter atau sekitar gedung 25 lantai.
+    Jika kamu pergi ke jembatan ini pada malam hari akan ada lampu lampu yang menghiasi
+    jembatan ini

@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7cd8b4ddeb662e44b7cfcfd31de2a19, type: 3}
+  m_Name: PopUp2
+  m_EditorClassIdentifier: 
+  popupTitle: Perpustakaan Soeman Hs
+  pagesOfTextIsi:
+  - Perpustakaan Soeman HS merupakan perpustakaan paling besar yang terletak di Jalan
+    Jenderal Sudirman No. 462, Pekanbaru, Riau. Perpustakaan ini terkenal karena
+    bangunannya yang begitu unik dan megah. Bahkan, perpustakaan ini disebut sebagai
+    salah satu perpustakaan terbesar dan termegah di Indonesia!
+  - Dulu, perpustakaan provinsi Riau ini berada di daerah Gobah, tetapi lokasinya
+    sulit dijangkau oleh masyarakat yang berada di pusat kota. Oleh karena itu, pemerintah
+    membangun Perpustakaan Soeman HS di pusat kota agar lebih mudah diakses
+  - Perpustakaan ini menggabungkan elemen dari budaya melayu riau dengan bentuk khas
+    islam. Jika teman teman perhatikan , atap pada perpustakaan ini berbentuk seperti
+    buku yang sedang terbuka, keren kan?. Perpustakaan ini juga menggunakan kaca
+    transparan hampir di setiap dinding nya, sehingga cahaya matahari dapat masuk
+    dan membuat perpustakaan ini dapat terang secara alami

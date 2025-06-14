@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 848409ee8ba454f42a5ddff137688a27, type: 3}
+  m_Name: ReferenceImageLibrary
+  m_EditorClassIdentifier: 
+  m_GuidLow: 5449302337391374403
+  m_GuidHigh: 3100015175259831474
+  m_DataStore:
+    m_Storage: []
+  m_Images:
+  - m_SerializedGuid:
+      m_GuidLow: 4876999357703697590
+      m_GuidHigh: 12117332064989832624
+    m_SerializedTextureGuid:
+      m_GuidLow: 17119368979707506260
+      m_GuidHigh: 4428356282429328699
+    m_Size: {x: 0.21, y: 0.2970297}
+    m_SpecifySize: 1
+    m_Name: marker Jembatan siak_1
+    m_Texture: {fileID: 0}
+  - m_SerializedGuid:
+      m_GuidLow: 5403960099429530508
+      m_GuidHigh: 4185767877939052168
+    m_SerializedTextureGuid:
+      m_GuidLow: 10764775574877081026
+      m_GuidHigh: 5320609283645456024
+    m_Size: {x: 0.21, y: 0.2970297}
+    m_SpecifySize: 1
+    m_Name: marker perpustakaan soeman hs_2
+    m_Texture: {fileID: 0}
