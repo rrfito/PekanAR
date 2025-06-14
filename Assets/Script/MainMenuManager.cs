@@ -60,7 +60,7 @@ public class MainMenuManager : MonoBehaviour
 
     void Quiz()
     {
-        SceneManager.LoadScene("Quiz");
+        SceneManager.LoadScene("TutorialQuiz");
     }
 
     void TentangAplikasi()
