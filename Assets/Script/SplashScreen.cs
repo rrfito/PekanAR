@@ -1,18 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class SplashScreen : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public Image logoImage;             
+    public float fadeDuration = 2f;     
+    public string nextSceneName;        
+
     void Start()
     {
         
+        Color color = logoImage.color;
+        color.a = 0f;
+        logoImage.color = color;
+        StartCoroutine(FadeInLogo());
     }
 
-    // Update is called once per frame
-    void Update()
+    IEnumerator FadeInLogo()
     {
+        float timer = 0f;
+
+        while (timer < fadeDuration)
+        {
+            timer += Time.deltaTime;
+            float alpha = timer / fadeDuration;
+
+            Color color = logoImage.color;
+            color.a = alpha;
+            logoImage.color = color;
+
+            yield return null;
+        }
+        Color finalColor = logoImage.color;
+        finalColor.a = 1f;
+        logoImage.color = finalColor;
+        yield return new WaitForSeconds(2f);
+
         
+        if (!string.IsNullOrEmpty(nextSceneName))
+        {
+            SceneManager.LoadScene(nextSceneName);
+        }
+        else
+        {
+            Debug.LogWarning("Next scene name belum diisi di inspector.");
+        }
     }
 }
