@@ -5,7 +5,8 @@ using UnityEngine.SceneManagement;
 
 public class SplashScreen : MonoBehaviour
 {
-    public Image logoImage;             
+    public Image logoImage;
+    public AudioSource audioSource;
     public float fadeDuration = 2f;     
     public string nextSceneName;        
 
@@ -15,6 +16,7 @@ public class SplashScreen : MonoBehaviour
         Color color = logoImage.color;
         color.a = 0f;
         logoImage.color = color;
+        audioSource.Play();
         StartCoroutine(FadeInLogo());
     }
 

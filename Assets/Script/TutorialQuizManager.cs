@@ -13,8 +13,9 @@ public class TutorialQuizManager : MonoBehaviour
     public Button nextButton;
     public TextMeshProUGUI AyoMulai;
 
-    private int currentIndex = 0; 
+    private int currentIndex = 0;
 
+    public AudioSource Sfx;
     void Start()
     {
         
@@ -26,6 +27,17 @@ public class TutorialQuizManager : MonoBehaviour
         prevButton.onClick.AddListener(OnPrevTutorial); 
         UpdateNavigationUI();
     }
+    IEnumerator Delay(string name)
+    {
+        Sfx.Play();
+        yield return new WaitForSeconds(Sfx.clip.length);
+        ChangeScene(name);
+    }
+    void ChangeScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
+
 
     void ShowTutorialPage(int index)
     {
@@ -42,6 +54,7 @@ public class TutorialQuizManager : MonoBehaviour
   
     void OnNextTutorial()
     {
+        Sfx.Play();
         if (currentIndex < info.Length - 1) 
         {
             currentIndex++;
@@ -49,13 +62,14 @@ public class TutorialQuizManager : MonoBehaviour
         }
         else
         {
-          
-            SceneManager.LoadScene("Quiz");
+            StartCoroutine(Delay("Quiz"));
+           
         }
     }
 
     void OnPrevTutorial()
     {
+        Sfx.Play();
         if (currentIndex > 0)
         {
             currentIndex--;
@@ -63,7 +77,8 @@ public class TutorialQuizManager : MonoBehaviour
         }
         else
         {
-            SceneManager.LoadScene("MainMenu");
+            StartCoroutine(Delay("MainMenu"));
+          
         }
     }
 

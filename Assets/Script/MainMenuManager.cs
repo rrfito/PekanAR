@@ -1,10 +1,12 @@
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class MainMenuManager : MonoBehaviour
 {
     public GameObject MainMenu;
+    public AudioSource btnSound;
     public GameObject PembelajaranMenu;
     public GameObject TentangAplikasiMenu;
     public Button BtnPembelajaran;
@@ -30,9 +32,20 @@ public class MainMenuManager : MonoBehaviour
         BtnJelajahiLokasi.onClick.AddListener(JelajahiLokasi);
         prev.onClick.AddListener(Kembali);
     }
+    IEnumerator Delay(string name)
+    {
+        btnSound.Play();
+        yield return new WaitForSeconds(btnSound.clip.length);
+        ChangeScene(name);
+    }
+    void ChangeScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 
     void Pembelajaran()
     {
+        btnSound.Play();
         MainMenu.SetActive(false);
         PembelajaranMenu.SetActive(true);
         prev.gameObject.SetActive(true);
@@ -42,6 +55,7 @@ public class MainMenuManager : MonoBehaviour
 
     void Kembali()
     {
+        btnSound.Play();
         MainMenu.SetActive(true);
         PembelajaranMenu.SetActive(false);
         prev.gameObject.SetActive(false);
@@ -50,21 +64,23 @@ public class MainMenuManager : MonoBehaviour
 
     void ScanGambar()
     {
-        SceneManager.LoadScene("Marker-based");
+        StartCoroutine(Delay("Marker-based"));
     }
 
     void JelajahiLokasi()
     {
-        SceneManager.LoadScene("JelajahiLokasi");
+        StartCoroutine(Delay("JelajahiLokasi"));
     }
 
     void Quiz()
     {
-        SceneManager.LoadScene("TutorialQuiz");
+        StartCoroutine(Delay("TutorialQuiz"));
     }
+    
 
     void TentangAplikasi()
     {
+        btnSound.Play();
         prev.gameObject.SetActive(true);
         MainMenu.SetActive(false);
         PembelajaranMenu.SetActive(false);
@@ -73,6 +89,7 @@ public class MainMenuManager : MonoBehaviour
 
     void Keluar()
     {
+        btnSound.Play();
         Application.Quit();
 #if UNITY_EDITOR
         UnityEditor.EditorApplication.isPlaying = false;

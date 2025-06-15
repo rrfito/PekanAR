@@ -5,9 +5,13 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine.SceneManagement;
+using System.ComponentModel;
 
 public class QuizManager : MonoBehaviour
 {
+
+
+    public GameObject iconTimer;
     public GameObject quizPanel, resultPanel;
     public TextMeshProUGUI questionText, timerText;
     public Button[] btnAnswer;
@@ -23,12 +27,18 @@ public class QuizManager : MonoBehaviour
     private float currentTime;
     private bool timerOn = false, answered = false;
 
+    public AudioSource sfx;
+    public AudioSource bgm;
+    public AudioClip correctSfx;
+    public AudioClip wrongSfx;
+    public AudioClip btnsfx;
+    public AudioClip complete;
     void Start()
     {
         btnNext.onClick.AddListener(NextQuestion);
         btnRetry.onClick.AddListener(StartQuiz);
-        btnContinue.onClick.AddListener(() => SceneManager.LoadScene("MainMenu"));
-        btnQuit.onClick.AddListener(() => SceneManager.LoadScene("MainMenu"));
+        btnContinue.onClick.AddListener(() => StartCoroutine(Delay("MainMenu")));
+        btnQuit.onClick.AddListener(() => StartCoroutine(Delay("MainMenu")));
         StartQuiz();
     }
 
@@ -49,9 +59,21 @@ public class QuizManager : MonoBehaviour
         
 
     }
+    IEnumerator Delay(string name)
+    {
+        sfx.PlayOneShot(btnsfx);
+        yield return new WaitForSeconds(btnsfx.length);
+        ChangeScene(name);
+    }
+    void ChangeScene(string name)
+    {
+        SceneManager.LoadScene(name);
+    }
 
     void StartQuiz()
     {
+        bgm.Play();
+        sfx.PlayOneShot(btnsfx);
         quizPanel.SetActive(true);
         resultPanel.SetActive(false);
         score = correctCount = wrongCount = currentIndex = 0;
@@ -101,12 +123,14 @@ public class QuizManager : MonoBehaviour
 
         if (index == q.correctOptionIndex)
         {
+            sfx.PlayOneShot(correctSfx);
             score++;
             correctCount++;
             btnAnswer[index].GetComponent<Image>().color = Color.green;
         }
         else
         {
+            sfx.PlayOneShot(wrongSfx);
             wrongCount++;
             btnAnswer[index].GetComponent<Image>().color = Color.red;
             btnAnswer[q.correctOptionIndex].GetComponent<Image>().color = Color.green;
@@ -120,6 +144,7 @@ public class QuizManager : MonoBehaviour
 
     void NextQuestion()
     {
+        sfx.PlayOneShot(btnsfx);
         currentIndex++;
         if (currentIndex < quizQuestions.Count)
         {
@@ -150,10 +175,13 @@ public class QuizManager : MonoBehaviour
 
     void ShowResult()
     {
+        bgm.Stop();
+        sfx.PlayOneShot(complete);
         quizPanel.SetActive(false);
         resultPanel.SetActive(true);
         btnNext.gameObject.SetActive(false);
         timerText.gameObject.SetActive(false);
+        iconTimer.gameObject.SetActive(false);
 
         scoreText.text = (score*10).ToString();
         completionText.text = "100%";
