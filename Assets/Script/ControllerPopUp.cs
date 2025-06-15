@@ -1,17 +1,17 @@
 using UnityEngine;
-using TMPro; // Penting untuk TextMeshPro
-using System.Collections.Generic; // Untuk List<string>
+using TMPro; 
+using System.Collections.Generic; 
 
 public class InfoPopupController : MonoBehaviour
 {
     [SerializeField]
-    private TextMeshPro _popupTextJudul; // Seret komponen TextMeshPro untuk JUDUL di Inspector
+    private TextMeshPro _popupTextJudul; 
 
     [SerializeField]
-    private TextMeshPro _popupTextIsi; // Seret komponen TextMeshPro untuk ISI di Inspector
+    private TextMeshPro _popupTextIsi;
 
-    private PopupContentData _currentPopupData; // Data pop-up yang sedang ditampilkan
-    private int _currentPageIndex = 0; // Melacak halaman teks saat ini
+    private PopupContentData _currentPopupData; 
+    private int _currentPageIndex = 0; 
 
     void Awake()
     {
@@ -27,16 +27,14 @@ public class InfoPopupController : MonoBehaviour
 
     void OnEnable()
     {
-        // OnEnable akan dipanggil setiap kali diaktifkan.
-        // Data harus diset setelah pop-up di-instantiate dan diaktifkan.
-        // ResetToFirstPage() akan dipanggil setelah data diset.
+        
     }
 
-    // Metode baru untuk mengatur data pop-up dari ImageTrackingManager
+   
     public void SetPopupData(PopupContentData data)
     {
         _currentPopupData = data;
-        ResetToFirstPage(); // Reset dan tampilkan halaman pertama dengan data baru
+        ResetToFirstPage(); 
     }
 
     public void GoToNextPage()
@@ -50,7 +48,7 @@ public class InfoPopupController : MonoBehaviour
         _currentPageIndex++;
         if (_currentPageIndex >= _currentPopupData.pagesOfTextIsi.Count)
         {
-            _currentPageIndex = 0; // Kembali ke halaman pertama jika sudah habis
+            _currentPageIndex = 0; 
         }
         UpdatePopupText();
         Debug.Log($"Pindah ke halaman teks isi: {_currentPageIndex + 1}");
@@ -64,7 +62,7 @@ public class InfoPopupController : MonoBehaviour
 
     private void UpdatePopupText()
     {
-        // Update teks judul
+      
         if (_popupTextJudul != null && _currentPopupData != null)
         {
             _popupTextJudul.text = _currentPopupData.popupTitle;
@@ -74,7 +72,7 @@ public class InfoPopupController : MonoBehaviour
             _popupTextJudul.text = "Judul Tidak Ada";
         }
 
-        // Update teks isi berdasarkan halaman saat ini
+     
         if (_popupTextIsi != null && _currentPopupData != null && _currentPopupData.pagesOfTextIsi != null && _currentPopupData.pagesOfTextIsi.Count > _currentPageIndex)
         {
             _popupTextIsi.text = _currentPopupData.pagesOfTextIsi[_currentPageIndex];

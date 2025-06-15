@@ -6,9 +6,6 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Quiz.unity
-    guid: b5828117698159841aa95c4db3cb4bd9
-  - enabled: 1
     path: Assets/Scenes/Splash Scrren.unity
     guid: 4d319e75e00b8f74c879fef8b1b0a7fa
   - enabled: 1
@@ -23,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/TutorialQuiz.unity
     guid: 2a4bf1653a03a9c47b59097f375dd122
+  - enabled: 1
+    path: Assets/Scenes/Quiz.unity
+    guid: b5828117698159841aa95c4db3cb4bd9
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 28feafdf8545cda4cb286df658aa5551, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: fc66f423af590b74da8146952c7df018, type: 2}

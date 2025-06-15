@@ -497,7 +497,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Jumlah bank soal yang tersedia berisi 25 pertanyaan. Namun, setiap kali
+  m_text: Jumlah bank soal yang tersedia berisi 23 pertanyaan. Namun, setiap kali
     kamu memulai kuis, sistem kami akan memilih secara acak 10 pertanyaan dari bank
     tersebut. Jadi, kamu akan menghadapi set soal yang berbeda dan baru setiap kali
     bermain!
@@ -2742,11 +2742,7 @@ MonoBehaviour:
     1.
     Hijau: Jika jawabanmu benar. Selamat!
 
-    2. Merah: Jika jawabanmu salah.
-
-    3.
-    Jika kamu menjawab salah, jawaban yang benar    akan ditunjukkan dengan warna
-    kuning agar kamu bisa belajar.'
+    2. Merah: Jika jawabanmu salah.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 43c4fbb0e98e8be47b85183f4c359016, type: 2}
   m_sharedMaterial: {fileID: 6204699554058927657, guid: 43c4fbb0e98e8be47b85183f4c359016, type: 2}
