@@ -164,4 +164,19 @@ public class ImageTrackingManager : MonoBehaviour
             popup.SetActive(true);
         }
     }
+    public void Refresh3Dobjects()
+    {
+        foreach (var model in _instantiatedModels.Values)
+        {
+            if (model != null) Destroy(model);
+        }
+        _instantiatedModels.Clear();
+
+        foreach (var popup in _activePopups.Values)
+        {
+            if (popup != null) Destroy(popup);
+        }
+        _activePopups.Clear();
+
+    }
 }

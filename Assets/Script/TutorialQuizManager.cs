@@ -85,7 +85,7 @@ public class TutorialQuizManager : MonoBehaviour
    
     void UpdateNavigationUI()
     {
-       
+        prevButton.gameObject.SetActive(currentIndex !=0);
         ShowTutorialPage(currentIndex);
         if (AyoMulai != null) 
         {
@@ -98,6 +98,7 @@ public class TutorialQuizManager : MonoBehaviour
                 AyoMulai.text = "Berikutnya";
             }
         }
+        
 
     }
 }

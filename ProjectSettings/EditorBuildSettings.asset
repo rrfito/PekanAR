@@ -23,6 +23,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Quiz.unity
     guid: b5828117698159841aa95c4db3cb4bd9
+  - enabled: 1
+    path: Assets/Scenes/ListMarker.unity
+    guid: 24074b1b11f3e2440a8bc4deb6246dac
   m_configObjects:
     UnityEditor.XR.ARCore.ARCoreSettings: {fileID: 11400000, guid: 28feafdf8545cda4cb286df658aa5551, type: 2}
     com.unity.xr.arfoundation.simulation_settings: {fileID: 11400000, guid: fc66f423af590b74da8146952c7df018, type: 2}
