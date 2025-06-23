@@ -3,9 +3,13 @@ using UnityEngine.XR.ARFoundation;
 using UnityEngine.XR.ARSubsystems;
 using System.Collections.Generic;
 using System.Collections;
+using UnityEngine.XR.ARCore;
 
 public class ImageTrackingManager : MonoBehaviour
 {
+    [SerializeField] private GameObject loading;
+    [SerializeField] private GameObject UI;
+    [SerializeField] private ARSession arSession;
     [SerializeField] private GameObject[] _arGameObjects;
     [SerializeField] private PopupContentData[] _popupContentDatas;
     [SerializeField] private ARTrackedImageManager _arTrackedImageManager;
@@ -18,6 +22,11 @@ public class ImageTrackingManager : MonoBehaviour
     private readonly Dictionary<string, GameObject> _instantiatedModels = new();
     private readonly Dictionary<string, GameObject> _activePopups = new();
     private bool wait = true;
+
+    void OnStart()
+    {
+        loading.gameObject.SetActive(false);
+    }
     void OnEnable()
     {
         _arTrackedImageManager.trackedImagesChanged += OnTrackedImagesChanged;
@@ -177,6 +186,15 @@ public class ImageTrackingManager : MonoBehaviour
             if (popup != null) Destroy(popup);
         }
         _activePopups.Clear();
-
+        StartCoroutine(ResetTracking());
+    }
+    IEnumerator ResetTracking()
+    {
+        UI.gameObject.SetActive(false);
+        loading.gameObject.SetActive(true);
+        arSession.Reset();
+        yield return new WaitForSeconds(1f);
+        loading.gameObject.SetActive(false);
+        UI.gameObject.SetActive(true);
     }
 }
